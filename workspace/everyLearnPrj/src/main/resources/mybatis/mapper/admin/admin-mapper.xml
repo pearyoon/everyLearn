@@ -624,6 +624,7 @@
 		    ,MEMBER_NO
 		    ,CATEGORY
 		    ,TITLE
+		    ,CONTENT
 		)
 		VALUES
 		(
@@ -631,6 +632,7 @@
 		    ,#{memberNo}
 		    ,#{category}
 		    ,#{title}
+		    ,#{content}
 		)
 	</insert>
 	

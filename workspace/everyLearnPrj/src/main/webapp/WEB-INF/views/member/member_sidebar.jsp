@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://127.0.0.1:8888/el/member/alert" onclick="test()"  class="item">
+                    <a href="http://127.0.0.1:8888/el/my/alert" onclick="test()"  class="item">
    
                         <div>알림</div>
                     </a>

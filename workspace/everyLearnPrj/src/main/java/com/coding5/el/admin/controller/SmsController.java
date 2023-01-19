@@ -50,20 +50,20 @@ public class SmsController {
     @PostMapping("admin/send")
     public String sendOne(String phoneNumber) {
     	
-//    	String sendNumber = phoneNumber.replaceAll("[-]", "");
-//    	log.info(sendNumber);
+    	String sendNumber = phoneNumber.replaceAll("[-]", "");
+    	log.info(sendNumber);
         
     	String randomNum = RandomNumber.randomNumber();
     	
-//    	Message message = new Message();
-//        // 하이픈 없이
-//        message.setFrom("01027250769");
-//        message.setTo(sendNumber);
-//        message.setText("에브리런 인증번호를 입력하세요!\n"
-//        		+ "["+randomNum+"]");
-//
-//        SingleMessageSentResponse response = this.messageService.sendOne(new SingleMessageSendingRequest(message));
-//        log.info("결과 ::: " + response);
+    	Message message = new Message();
+        // 하이픈 없이
+        message.setFrom("01027250769");
+        message.setTo(sendNumber);
+        message.setText("에브리런 인증번호를 입력하세요!\n"
+        		+ "["+randomNum+"]");
+
+        SingleMessageSentResponse response = this.messageService.sendOne(new SingleMessageSendingRequest(message));
+        log.info("결과 ::: " + response);
         
         return randomNum;
     }

@@ -8,7 +8,7 @@ public class AlertVo {
 	private String memberNo;
 	private String category;
 	private String title;
-	private String alertUrl;
+	private String content;
 	private String sendDate;
 	private String clickYn;
 }

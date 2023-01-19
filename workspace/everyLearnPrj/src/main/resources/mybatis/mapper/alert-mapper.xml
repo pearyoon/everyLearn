@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="alertMapper">
+
+	<select id="selectAlertList" resultType="com.coding5.el.alert.vo.AlertVo">
+		SELECT 
+		    A.NO
+		    ,MEMBER_NO
+		    ,TYPE AS CATEGORY
+		    ,TITLE
+		    ,CONTENT
+		    ,TO_CHAR(SEND_DATE, 'MM-DD(DY)') AS SEND_DATE
+		    ,CLICK_YN
+		FROM (
+		        SELECT *
+		        FROM ALERT
+		        ORDER BY SEND_DATE DESC
+		    ) A
+		JOIN ALERT_CATE C ON A.CATEGORY = C.NO
+		WHERE MEMBER_NO = #{member_no}
+		<![CDATA[ AND ROWNUM <= 10 ]]>
+	</select>
+	
+	<select id="selectAlertCnt" resultType="int">
+		SELECT COUNT(*)
+		FROM ALERT
+		WHERE MEMBER_NO = #{member_no}
+		AND CLICK_YN = 'N'
+	</select>
+	
+	<update id="alertClickY">
+		UPDATE ALERT
+		SET
+		    CLICK_YN = 'Y'
+		WHERE NO = #{no}
+	</update>
+	
+
+</mapper>

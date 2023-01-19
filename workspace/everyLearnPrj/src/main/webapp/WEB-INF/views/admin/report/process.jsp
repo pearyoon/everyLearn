@@ -90,7 +90,8 @@
                                     <label for="message">회원메시지</label>
                                 </div>
                                 <div class="textarea-wrap">
-                                    <textarea name="title" id="message"></textarea>
+                                    <input hidden name="title" id="title">
+                                    <textarea name="content" id="message"></textarea>
                                 </div>
                             </div>
                             <div class="input-wrap input-date">
@@ -131,10 +132,11 @@
                 if($("#insufficient").is(":checked")){
                     $("#date-box").css('display', 'none');
                     $('#message').text("회원님께서 "+reportDate+" 시각에 신고하신 게시글이 사유불충분으로 신고가 반려되었습니다. 감사합니다.");
+                    $('#title').val('신고 관련 알림');
                     $('select[name="memberNo"]').val('${vo.accusor}').prop("selected",true);
                 } else if($("#stop").is(":checked")){
                     $("#date-box").css('display', 'block');
-
+                    $('#title').val('정지 관련 알림');
                     $('#message').text("회원님께서 작성하신 게시글이 "+reportDate+" 시각에 "+ type+"으로 신고되어 회원님의 계정이 익일부터 7일간 정지되었음을 알립니다.");
                     $('select[name="memberNo"]').val('${vo.blacklist}').prop("selected",true);
                 } 

@@ -121,7 +121,7 @@
                     <label for="message">회원메시지</label>
                 </div>
                 <div class="textarea-wrap">
-                    <textarea name="title" id="message"></textarea>
+                    <textarea name="content" id="message"></textarea>
                 </div>
             </div>
         </div>
@@ -144,7 +144,8 @@
                     method : "POST",
                     data : {
                         "memberNo" : no ,
-                        "title" : message ,
+                        "title" : "개인메시지",
+                        "content" : message ,
                         "category" : "4"
                     },
                     success : function(data){

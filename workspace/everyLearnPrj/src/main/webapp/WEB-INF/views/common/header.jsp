@@ -80,7 +80,7 @@
 								</div>
 								
 							<div class="dropdown-content">
-								<a href="/el/member/alert">알림</a>
+								<a href="/el/my/alert">알림</a>
 								<a href="javascript:memberStudy('${loginMember.memberNo}')">내 강의</a>
 								<a href="/el/member/writeList?memberNo=${loginMember.memberNo}">작성글</a>
 								<a href="/el/member/logout">로그아웃</a>
@@ -105,7 +105,7 @@
 								<span class="dropbtn_icon"></span>
 								
 								<div class="dropdown-content">
-									<a href="/el/member/alert">알림</a>
+									<a href="/el/my/alert">알림</a>
 									<a id="myClassList" href="javascript:memberStudy('${loginMember.memberNo}')">내 강의</a>
 
 
